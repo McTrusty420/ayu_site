@@ -4,220 +4,76 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#18100d" />
-    <meta name="description" content="Riddhi Ayurveda Clinic — Blogs." />
+    
+    <title>Journal &amp; Insights — RIDDHI Ayurveda Clinic</title>
+    <meta name="description" content="Read clinical insights, timeless philosophy, and practical guidance on classical Ayurveda, Panchakarma, nutrition, and holistic health from RIDDHI Ayurveda Clinic, Rajkot." />
+    <link rel="canonical" href="https://riddhiayurveda.online/blogs.html" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://riddhiayurveda.online/blogs.html" />
+    <meta property="og:title" content="Journal &amp; Insights — RIDDHI Ayurveda Clinic" />
+    <meta property="og:description" content="Clinical insights on classical Ayurveda, Panchakarma, and holistic living from Dr. Vijay Telang and Dr. Minakshee Vijay Telang." />
+    <meta property="og:image" content="https://riddhiayurveda.online/assets/images/panchakarma.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Journal &amp; Insights — RIDDHI Ayurveda Clinic" />
+    <meta name="twitter:description" content="Clinical insights on classical Ayurveda, Panchakarma, and holistic living from Dr. Vijay Telang and Dr. Minakshee Vijay Telang." />
+    <meta name="twitter:image" content="https://riddhiayurveda.online/assets/images/panchakarma.png" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "RIDDHI Ayurveda Journal",
+      "url": "https://riddhiayurveda.online/blogs.html",
+      "description": "Insights on classical Ayurveda, Panchakarma, and integrative wellbeing.",
+      "publisher": {
+        "@type": "MedicalClinic",
+        "name": "RIDDHI Ayurveda Clinic",
+        "url": "https://riddhiayurveda.online"
+      },
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "headline": "Soup Is Not Just a Japanese Trend: The Ancient Science of Liquid Foods in Ayurveda",
+          "url": "https://riddhiayurveda.online/blog/science-of-liquid-foods-in-ayurveda.html",
+          "datePublished": "2026-09-18T00:00:00+05:30",
+          "author": {
+            "@type": "Person",
+            "name": "Dr. Vijay Telang"
+          }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Śrāvaṇa Krishna Ṣaṣṭhī: Looking at a Traditional Observance Through Ayurveda",
+          "url": "https://riddhiayurveda.online/blog/sravana-krishna-shashthi-monsoon-ayurveda.html",
+          "datePublished": "2026-08-28T00:00:00+05:30",
+          "author": {
+            "@type": "Person",
+            "name": "Dr. Vijay Telang"
+          }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Ayurveda for Beginners: Why Traditional Wisdom Still Matters in the Age of AI",
+          "url": "https://riddhiayurveda.online/blog/ayurveda-for-beginners.html",
+          "datePublished": "2026-08-14T00:00:00+05:30",
+          "author": {
+            "@type": "Person",
+            "name": "Dr. Vijay Telang"
+          }
+        }
+      ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600;1,700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
-    <title>Blogs - Riddhi Ayurveda Clinic</title>
-    <style>
-      .blog-page-bg {
-        position: fixed;
-        inset: 0;
-        z-index: -1;
-        width: 100vw;
-        height: 100vh;
-        background: linear-gradient(180deg, rgba(12, 8, 5, 0.8) 0%, rgba(12, 8, 5, 0.9) 100%), url('./assets/images/treatments-background.jpg') center/cover no-repeat;
-      }
-      .blog-container {
-        padding: calc(var(--header-height) + 4rem) var(--page-padding) 0;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .blog-header {
-        text-align: center;
-        margin-bottom: 4rem;
-      }
-      .blog-title {
-        font-family: var(--serif);
-        font-size: clamp(3rem, 8vw, 4.5rem);
-        color: var(--ivory);
-        margin: 0 0 1rem;
-        line-height: 1;
-      }
-      .blog-subtitle {
-        color: var(--ivory-muted);
-        font-size: clamp(1.2rem, 3vw, 1.5rem);
-        margin: 0;
-      }
-      .blog-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 2.5rem;
-        width: 100%;
-        max-width: 1200px;
-        flex-grow: 1;
-      }
-      .blog-card {
-        background: rgba(22, 16, 11, 0.6);
-        border: 1px solid rgba(243, 201, 168, 0.2);
-        border-radius: 1rem;
-        overflow: hidden;
-        transition: transform 0.3s ease, border-color 0.3s ease;
-        display: flex;
-        flex-direction: column;
-      }
-      .blog-card:hover {
-        transform: translateY(-5px);
-        border-color: var(--gold-accent);
-      }
-      .blog-image {
-        width: 100%;
-        height: 240px;
-        object-fit: cover;
-      }
-      .blog-content {
-        padding: 2rem;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-      }
-      .blog-date {
-        color: var(--gold-accent);
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        margin-bottom: 1rem;
-      }
-      .blog-post-title {
-        font-family: var(--serif);
-        font-size: 1.8rem;
-        color: var(--ivory);
-        margin: 0 0 1rem;
-        line-height: 1.2;
-      }
-      .blog-excerpt {
-        color: var(--ivory-muted);
-        font-size: 1rem;
-        line-height: 1.6;
-        margin: 0 0 2rem;
-        flex: 1;
-      }
-      .blog-read-more {
-        color: var(--ivory);
-        background: none;
-        border: none;
-        text-decoration: none;
-        font-size: 0.9rem;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        border-bottom: 1px solid var(--gold-accent);
-        padding: 0 0 0.2rem 0;
-        align-self: flex-start;
-        transition: color 0.3s ease;
-        cursor: pointer;
-        font-family: var(--sans);
-      }
-      .blog-read-more:hover {
-        color: var(--gold-accent);
-      }
-
-      /* Modal Styles */
-      .blog-modal {
-        position: fixed;
-        inset: 0;
-        z-index: 2000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: var(--page-padding);
-        background: rgba(12, 8, 5, 0.9);
-        backdrop-filter: blur(8px);
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease, visibility 0.3s ease;
-      }
-      .blog-modal.is-open {
-        opacity: 1;
-        visibility: visible;
-      }
-      .blog-modal-content {
-        background: var(--ink);
-        border: 1px solid rgba(243, 201, 168, 0.2);
-        border-radius: 1rem;
-        width: 100%;
-        max-width: 800px;
-        max-height: 90vh;
-        overflow-y: auto;
-        position: relative;
-        transform: translateY(20px);
-        transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-        display: flex;
-        flex-direction: column;
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none; /* IE and Edge */
-      }
-      .blog-modal-content::-webkit-scrollbar {
-        display: none; /* Chrome, Safari and Opera */
-      }
-      .blog-modal.is-open .blog-modal-content {
-        transform: translateY(0);
-      }
-      .modal-close {
-        position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
-        background: rgba(22, 16, 11, 0.6);
-        border: 1px solid rgba(243, 201, 168, 0.3);
-        border-radius: 50%;
-        width: 2.5rem;
-        height: 2.5rem;
-        color: var(--ivory);
-        font-size: 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        z-index: 10;
-        transition: background-color 0.2s, color 0.2s;
-      }
-      .modal-close:hover {
-        background: var(--gold-accent);
-        color: var(--ink);
-      }
-      .modal-hero-img {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-      }
-      .modal-body-container {
-        padding: 3rem;
-      }
-      .modal-date {
-        color: var(--gold-accent);
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        margin-bottom: 1rem;
-        display: block;
-      }
-      .modal-title {
-        font-family: var(--serif);
-        font-size: clamp(2rem, 5vw, 3rem);
-        color: var(--ivory);
-        margin: 0 0 2rem;
-        line-height: 1.1;
-      }
-      .modal-text {
-        color: var(--ivory-muted);
-        font-size: 1.05rem;
-        line-height: 1.8;
-      }
-      .modal-text p {
-        margin-bottom: 1.5rem;
-      }
-      @media (max-width: 48rem) {
-        .modal-body-container {
-          padding: 2rem 1.5rem;
-        }
-        .modal-hero-img {
-          height: 200px;
-        }
-      }
-    </style>
   </head>
   <body>
     <div class="blog-page-bg"></div>
@@ -232,7 +88,7 @@
         <a href="index.html#journey">Our Journey</a>
         <a href="index.html#doctors">Meet the Doctors</a>
         <a href="index.html#stories">Real Stories</a>
-        <a href="blogs.html">Blog</a>
+        <a href="blogs.html" class="is-active">Blog</a>
         <a href="https://wa.me/918793219610" target="_blank" rel="noopener noreferrer">Book an Appointment</a>
       </nav>
 
@@ -245,67 +101,144 @@
 
     <main class="blog-container">
       <div class="blog-header">
-        <h1 class="blog-title">Journal</h1>
-        <p class="blog-subtitle">Insights on Ayurveda, wellness, and mindful living.</p>
+        <span class="blog-eyebrow">RIDDHI CLINICAL JOURNAL</span>
+        <h1 class="blog-title">Insights &amp; Perspectives</h1>
+        <p class="blog-subtitle">Essays on classical Ayurveda, constitutional healing, Panchakarma, and intentional living.</p>
       </div>
 
-      <div class="blog-grid">
-        <!-- Article 1 -->
+      <section class="blog-grid" aria-label="Articles">
+        <!-- Article 1 (Newest) -->
         <article class="blog-card">
-          <img src="./assets/images/panchakarma.png" alt="Panchakarma" class="blog-image" loading="lazy" />
-          <div class="blog-content">
-            <div class="blog-date">August 14, 2026</div>
-            <h2 class="blog-post-title">Shravan Shuddh Dwitiya</h2>
-            <p class="blog-excerpt">Why Traditional Wisdom Still Matters in the Age of AI</p>
-            
-            <div class="blog-full-text" hidden>
-              <h3>Ayurveda for Beginners: Why Traditional Wisdom Still Matters in the Age of AI</h3>
-              <p>We are living in an era of artificial intelligence. Almost every field is being supported by AI, and healthcare is no exception. Advanced technologies are now assisting in diagnosis, research, surgical procedures, imaging, data analysis, and patient monitoring. </p>
-              <p>These developments are valuable, but health is not only about technology.</p>
-              <p>Human wellbeing also includes physical balance, mental calmness, good digestion, proper sleep, emotional stability, and a sense of inner wellbeing. Even with increasing comfort, convenience, and medical technology, people continue to experience lifestyle disorders, chronic diseases, stress, disturbed sleep, digestive problems, and other health concerns.</p>
-              <p>This is where an integrated approach to health becomes important.</p>
-              <p>Traditional systems of medicine such as Ayurveda offer a different perspective. Ayurveda has been practiced for more than two thousand years and focuses not only on the treatment of disease but also on maintaining health and preventing imbalance through appropriate food, lifestyle, daily routine, seasonal regimen, medicines, and therapeutic procedures.</p>
-              <h3>Understanding Ayurveda in a Simple Way</h3>
-              <p>Ayurvedic knowledge can be understood through three important components traditionally described as Hetu, Lakṣaṇa and Cikitsā.</p>
-              <p>Hetu means the causative or contributing factors responsible for disease or imbalance.</p>
-              <p>Lakṣaṇa refers to the signs and symptoms through which a disease or disturbed state becomes evident.</p>
-              <p>Cikitsā means treatment or therapeutic management.</p>
-              <p>Thus, Ayurveda first tries to understand why a problem has developed, then identifies how it is manifesting, and <br> finally decides how it should be managed.</p>
-              <h3>Where Does Panchakarma Fit In?</h3>
-              <p>Ayurvedic treatment is not limited to herbal medicines.</p>
-              <p>Depending on the individual, the condition, strength, age, season, digestive capacity and other clinical factors, Ayurveda may recommend Śamana therapies aimed at balancing disturbed functions or Śodhana therapies intended for therapeutic purification.</p>
-              <p>Panchakarma is one of the important Śodhana approaches described in Ayurveda.</p>
-              <p>The major therapeutic procedures associated with Panchakarma include:</p>
-              <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem; color: var(--ivory-muted); line-height: 1.8; font-size: 1.05rem;">
-                <li><strong>Vamana</strong> – therapeutic emesis in properly selected individuals</li>
-                <li><strong>Virechana</strong> – therapeutic purgation</li>
-                <li><strong>Basti</strong> – medicated enema therapy</li>
-                <li><strong>Nasya</strong> – administration of medicines through the nasal route</li>
-                <li><strong>Raktamokṣaṇa</strong> – therapeutic bloodletting in selected conditions</li>
-              </ul>
-              <p>These are not routine home remedies or general "detox" procedures. They require proper assessment, preparation, professional supervision and appropriate post-procedure care.</p>
-              <h3>Is Panchakarma Only for Disease?</h3>
-              <p>Panchakarma has traditionally been used in different clinical contexts, including disease management as well as certain preventive and health-promoting approaches.</p>
-              <p>However, the same Panchakarma procedure is not suitable for everyone.</p>
-              <p>A person seeking wellness may require a very different plan from someone who has a long-standing disease. Similarly, patients who approach Ayurveda after years of illness, multiple medications or advanced disease need careful evaluation before any Panchakarma procedure is considered.</p>
-              <p>The aim should therefore not be to perform Panchakarma simply because it is popular, but to select the right therapy for the right person at the right time.</p>
-              <h3>Ayurveda in the Modern World</h3>
-              <p>Modern medicine and technology continue to make remarkable advances. Ayurveda does not need to compete with these advances.</p>
-              <p>Instead, responsible healthcare can benefit from understanding where modern diagnostics, emergency medicine and advanced treatment are necessary, while also recognising the value of preventive lifestyle practices and traditional health knowledge.</p>
-              <p>The future of healthcare may therefore be increasingly integrative—using technology where it is most useful while continuing to value nutrition, lifestyle, movement, sleep, mental wellbeing and traditional systems of health.</p>
-              <p>For someone completely new to Ayurveda, the first step is simple:</p>
-              <p>Do not begin with complicated medicines or Panchakarma packages. Begin by understanding your body, habits, digestion, sleep, lifestyle and individual health needs.</p>
-              <p><strong>Ayurveda starts with the individual.</strong></p>
-              <hr style="border: none; border-top: 1px solid rgba(243, 201, 168, 0.2); margin: 2rem 0;">
-              <p><strong>RIDDHI Ayurveda Clinic, Rajkot</strong><br>Ayurveda • Panchakarma • Yoga • Personalized Lifestyle Care<br>📞 9057552143</p>
+          <a href="blog/science-of-liquid-foods-in-ayurveda.html" class="blog-card-media" tabindex="-1" aria-hidden="true">
+            <img src="./assets/images/digestive-wellness.png" alt="Ayurvedic liquid food preparation and digestive wellness" loading="lazy" />
+            <span class="blog-card-category">Nutrition &amp; Āhāra</span>
+          </a>
+          
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <time datetime="2026-09-18">September 18, 2026</time>
+              <span aria-hidden="true">&bull;</span>
+              <span>Bhadrapada Shuddh Saptami</span>
             </div>
             
-            <button class="blog-read-more" type="button">Read Article</button>
+            <h2 class="blog-card-title">
+              <a href="blog/science-of-liquid-foods-in-ayurveda.html" style="text-decoration: none; color: inherit;">
+                Soup Is Not Just a Japanese Trend: The Ancient Science of Liquid Foods in Ayurveda
+              </a>
+            </h2>
+            
+            <p class="blog-card-excerpt">
+              Long before miso soup became a wellness buzzword, Suśruta Saṃhitā engineered a meticulous science of liquid foods: Maṇḍa, Peyā, Vilepī, pulse soups (Yūṣa), and nourishing broths (Māṃsarasa).
+            </p>
+            
+            <div class="blog-card-footer">
+              <div class="blog-card-author">
+                <div class="blog-author-avatar-group">
+                  <img src="./assets/images/dr-vijay.jpg" alt="Dr. Vijay Telang" class="blog-author-avatar" />
+                  <img src="./assets/images/dr-minakshee.jpg" alt="Dr. Minakshee Vijay Telang" class="blog-author-avatar" />
+                </div>
+                <span>Dr. Vijay &amp; Dr. Minakshee</span>
+              </div>
+              
+              <a 
+                href="blog/science-of-liquid-foods-in-ayurveda.html" 
+                class="blog-card-cta"
+                aria-label="Read article: Soup Is Not Just a Japanese Trend: The Ancient Science of Liquid Foods in Ayurveda"
+              >
+                Read Article <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
           </div>
         </article>
 
-        
-      </div>
+        <!-- Article 2 -->
+        <article class="blog-card">
+          <a href="blog/sravana-krishna-shashthi-monsoon-ayurveda.html" class="blog-card-media" tabindex="-1" aria-hidden="true">
+            <img src="./assets/images/diet-guidance.png" alt="Ayurvedic monsoon seasonal nutrition and diet" loading="lazy" />
+            <span class="blog-card-category">Seasonal Living</span>
+          </a>
+          
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <time datetime="2026-08-28">August 28, 2026</time>
+              <span aria-hidden="true">&bull;</span>
+              <span>Śrāvaṇa Krishna Ṣaṣṭhī</span>
+            </div>
+            
+            <h2 class="blog-card-title">
+              <a href="blog/sravana-krishna-shashthi-monsoon-ayurveda.html" style="text-decoration: none; color: inherit;">
+                Śrāvaṇa Krishna Ṣaṣṭhī: Looking at a Traditional Observance Through Ayurveda
+              </a>
+            </h2>
+            
+            <p class="blog-card-excerpt">
+              Why does digestive fire weaken during the monsoon? Explore the medical rationale behind Varṣā Ṛtucaryā and how ancient Indian fasting customs reflect digestive physiology.
+            </p>
+            
+            <div class="blog-card-footer">
+              <div class="blog-card-author">
+                <div class="blog-author-avatar-group">
+                  <img src="./assets/images/dr-vijay.jpg" alt="Dr. Vijay Telang" class="blog-author-avatar" />
+                  <img src="./assets/images/dr-minakshee.jpg" alt="Dr. Minakshee Vijay Telang" class="blog-author-avatar" />
+                </div>
+                <span>Dr. Vijay &amp; Dr. Minakshee</span>
+              </div>
+              
+              <a 
+                href="blog/sravana-krishna-shashthi-monsoon-ayurveda.html" 
+                class="blog-card-cta"
+                aria-label="Read article: Śrāvaṇa Krishna Ṣaṣṭhī: Looking at a Traditional Observance Through Ayurveda"
+              >
+                Read Article <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="blog-card">
+          <a href="blog/ayurveda-for-beginners.html" class="blog-card-media" tabindex="-1" aria-hidden="true">
+            <img src="./assets/images/panchakarma.png" alt="Ayurvedic therapies and holistic balance" loading="lazy" />
+            <span class="blog-card-category">Foundations</span>
+          </a>
+          
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <time datetime="2026-08-14">August 14, 2026</time>
+              <span aria-hidden="true">&bull;</span>
+              <span>Shravan Shuddh Dwitiya</span>
+            </div>
+            
+            <h2 class="blog-card-title">
+              <a href="blog/ayurveda-for-beginners.html" style="text-decoration: none; color: inherit;">
+                Ayurveda for Beginners: Why Traditional Wisdom Still Matters in the Age of AI
+              </a>
+            </h2>
+            
+            <p class="blog-card-excerpt">
+              In an era powered by artificial intelligence and advanced medicine, discover why the ancient Trisūtra—Hetu, Lakṣaṇa, and Cikitsā—and individual constitutional care remain irreplaceable.
+            </p>
+            
+            <div class="blog-card-footer">
+              <div class="blog-card-author">
+                <div class="blog-author-avatar-group">
+                  <img src="./assets/images/dr-vijay.jpg" alt="Dr. Vijay Telang" class="blog-author-avatar" />
+                  <img src="./assets/images/dr-minakshee.jpg" alt="Dr. Minakshee Vijay Telang" class="blog-author-avatar" />
+                </div>
+                <span>Dr. Vijay &amp; Dr. Minakshee</span>
+              </div>
+              
+              <a 
+                href="blog/ayurveda-for-beginners.html" 
+                class="blog-card-cta"
+                aria-label="Read article: Ayurveda for Beginners: Why Traditional Wisdom Still Matters in the Age of AI"
+              >
+                Read Article <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </section>
 
       <footer class="site-footer">
         <p>RIDDHI Ayurveda Clinic &copy; 2026</p>
@@ -313,19 +246,7 @@
       </footer>
     </main>
 
-    <!-- Modal Template -->
-    <div id="blog-modal" class="blog-modal" aria-modal="true" role="dialog">
-      <div class="blog-modal-content">
-        <button class="modal-close" aria-label="Close modal">&times;</button>
-        <img id="modal-img" src="" alt="Article feature" class="modal-hero-img" />
-        <div class="modal-body-container">
-          <span id="modal-date" class="modal-date"></span>
-          <h2 id="modal-title" class="modal-title"></h2>
-          <div id="modal-text" class="modal-text"></div>
-        </div>
-      </div>
-    </div>
-
+    <!-- Mobile Navigation -->
     <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" hidden>
       <div class="mobile-menu__top">
         <span class="brand-wordmark brand-wordmark--menu" aria-label="RIDDHI">RIDDHI</span>
@@ -339,58 +260,11 @@
         <a href="index.html#journey">Our Journey</a>
         <a href="index.html#doctors">Meet the Doctors</a>
         <a href="index.html#stories">Real Stories</a>
-        <a href="blogs.html">Blog</a>
+        <a href="blogs.html" class="is-active">Blog</a>
         <a class="mobile-menu__primary" href="https://wa.me/918793219610" target="_blank" rel="noopener noreferrer">Book an Appointment</a>
       </div>
     </nav>
     
-    <script>
-      // Blog Modal Logic
-      const modal = document.getElementById('blog-modal');
-      const closeBtn = document.querySelector('.modal-close');
-      const readMoreBtns = document.querySelectorAll('.blog-read-more');
-
-      readMoreBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const card = btn.closest('.blog-card');
-          const title = card.querySelector('.blog-post-title').textContent;
-          const date = card.querySelector('.blog-date').textContent;
-          const fullTextHTML = card.querySelector('.blog-full-text').innerHTML;
-          const imgSrc = card.querySelector('.blog-image').src;
-          const imgAlt = card.querySelector('.blog-image').alt;
-
-          // Populate modal
-          document.getElementById('modal-title').textContent = title;
-          document.getElementById('modal-date').textContent = date;
-          document.getElementById('modal-text').innerHTML = fullTextHTML;
-          document.getElementById('modal-img').src = imgSrc;
-          document.getElementById('modal-img').alt = imgAlt;
-
-          // Show modal
-          modal.classList.add('is-open');
-          document.body.style.overflow = 'hidden';
-        });
-      });
-
-      const closeModal = () => {
-        modal.classList.remove('is-open');
-        document.body.style.overflow = '';
-      };
-
-      closeBtn.addEventListener('click', closeModal);
-
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          closeModal();
-        }
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('is-open')) {
-          closeModal();
-        }
-      });
-    </script>
     <script src="script.js" defer></script>
   </body>
 </html>

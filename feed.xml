@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RIDDHI Ayurveda Clinic — Journal &amp; Perspectives</title>
+    <link>https://riddhiayurveda.online/blogs.html</link>
+    <description>Insights on classical Ayurveda, constitutional healing, Panchakarma, and mindful living from RIDDHI Ayurveda Clinic, Rajkot.</description>
+    <language>en-in</language>
+    <lastBuildDate>Fri, 18 Sep 2026 00:00:00 +0530</lastBuildDate>
+    <atom:link href="https://riddhiayurveda.online/feed.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Soup Is Not Just a Japanese Trend: The Ancient Science of Liquid Foods in Ayurveda</title>
+      <link>https://riddhiayurveda.online/blog/science-of-liquid-foods-in-ayurveda.html</link>
+      <guid isPermaLink="true">https://riddhiayurveda.online/blog/science-of-liquid-foods-in-ayurveda.html</guid>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 +0530</pubDate>
+      <description>Long before miso soup became a wellness buzzword, Suśruta Saṃhitā engineered a meticulous science of liquid foods: Maṇḍa, Peyā, Vilepī, pulse soups, and nourishing broths.</description>
+      <author>dr.vijay@riddhiayurveda.online (Dr. Vijay Telang &amp; Dr. Minakshee Vijay Telang)</author>
+    </item>
+
+    <item>
+      <title>Śrāvaṇa Krishna Ṣaṣṭhī: Looking at a Traditional Observance Through Ayurveda</title>
+      <link>https://riddhiayurveda.online/blog/sravana-krishna-shashthi-monsoon-ayurveda.html</link>
+      <guid isPermaLink="true">https://riddhiayurveda.online/blog/sravana-krishna-shashthi-monsoon-ayurveda.html</guid>
+      <pubDate>Fri, 28 Aug 2026 00:00:00 +0530</pubDate>
+      <description>Why does digestive fire weaken during the monsoon? Explore the medical rationale behind Varṣā Ṛtucaryā and how ancient Indian fasting customs reflect digestive physiology.</description>
+      <author>dr.vijay@riddhiayurveda.online (Dr. Vijay Telang &amp; Dr. Minakshee Vijay Telang)</author>
+    </item>
+
+    <item>
+      <title>Ayurveda for Beginners: Why Traditional Wisdom Still Matters in the Age of AI</title>
+      <link>https://riddhiayurveda.online/blog/ayurveda-for-beginners.html</link>
+      <guid isPermaLink="true">https://riddhiayurveda.online/blog/ayurveda-for-beginners.html</guid>
+      <pubDate>Fri, 14 Aug 2026 00:00:00 +0530</pubDate>
+      <description>We are living in an era of artificial intelligence, but health is more than technology. Learn why traditional Ayurvedic wisdom, Hetu-Lakṣaṇa-Cikitsā, and personalized Panchakarma matter today.</description>
+      <author>dr.vijay@riddhiayurveda.online (Dr. Vijay Telang &amp; Dr. Minakshee Vijay Telang)</author>
+    </item>
+  </channel>
+</rss>
