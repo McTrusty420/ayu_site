@@ -1,0 +1,32 @@
+name: Auto Publish Blogs from Word Documents
+
+on:
+  push:
+    paths:
+      - '*.docx'
+      - 'blogs_config.json'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Build blogs from docx
+        run: python3 build_blogs.py
+
+      - name: Commit and push generated blog pages
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add blog/ blogs.html index.html sitemap.xml feed.xml blogs_config.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-published new blog entries from docx" && git push)
