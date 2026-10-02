@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#18100d" />
+    <meta name="theme-color" content="#f6f0e4" />
     
     <title>Śrāvaṇa Krishna Ṣaṣṭhī: Looking at a Traditional Observance Through Ayurveda — RIDDHI Ayurveda Clinic</title>
     <meta name="description" content="Discover how classical Ayurveda understands the monsoon season (Varṣā Ṛtu), why digestive fire (Agni) weakens during the rains, and the real science behind traditional fasting observances." />
@@ -16,7 +16,7 @@
     <meta property="og:description" content="Why digestive fire weakens during the monsoon and how the ancient principles of Varṣā Ṛtucaryā explain traditional Indian seasonal customs." />
     <meta property="og:url" content="https://riddhiayurveda.online/blog/sravana-krishna-shashthi-monsoon-ayurveda.html" />
     <meta property="og:site_name" content="RIDDHI Ayurveda Clinic" />
-    <meta property="og:image" content="https://riddhiayurveda.online/assets/images/diet-guidance.png" />
+    <meta property="og:image" content="https://riddhiayurveda.online/assets/images/diet-guidance.webp" />
     <meta property="article:published_time" content="2026-08-28T00:00:00+05:30" />
     <meta property="article:section" content="Seasonal Living &amp; Ṛtucaryā" />
 
@@ -24,7 +24,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Śrāvaṇa Krishna Ṣaṣṭhī: Looking at a Traditional Observance Through Ayurveda" />
     <meta name="twitter:description" content="Why digestive fire weakens during the monsoon and how the ancient principles of Varṣā Ṛtucaryā explain traditional Indian seasonal customs." />
-    <meta name="twitter:image" content="https://riddhiayurveda.online/assets/images/diet-guidance.png" />
+    <meta name="twitter:image" content="https://riddhiayurveda.online/assets/images/diet-guidance.webp" />
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
@@ -37,7 +37,7 @@
       },
       "headline": "Śrāvaṇa Krishna Ṣaṣṭhī: Looking at a Traditional Observance Through Ayurveda",
       "description": "Discover how classical Ayurveda understands the monsoon season (Varṣā Ṛtu), why digestive fire (Agni) weakens during the rains, and the real science behind traditional fasting observances.",
-      "image": "https://riddhiayurveda.online/assets/images/diet-guidance.png",
+      "image": "https://riddhiayurveda.online/assets/images/diet-guidance.webp",
       "datePublished": "2026-08-28T00:00:00+05:30",
       "dateModified": "2026-08-28T00:00:00+05:30",
       "author": [
@@ -71,13 +71,13 @@
     }
     </script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600;1,700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+    <!-- Self-hosted font preloads -->
+    <link rel="preload" href="../assets/fonts/cormorant-garamond-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../assets/fonts/cormorant-garamond-500.woff2" as="font" type="font/woff2" crossorigin />
+
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
-    <div class="blog-page-bg"></div>
 
     <header class="site-header">
       <div class="brand-lockup">
@@ -382,7 +382,7 @@
           try {
             await navigator.clipboard.writeText(window.location.href);
             copyBtnText.textContent = 'Copied!';
-            copyBtn.style.borderColor = 'var(--gold-accent)';
+            copyBtn.style.borderColor = 'var(--moss)';
             setTimeout(() => {
               copyBtnText.textContent = 'Copy Link';
               copyBtn.style.borderColor = '';

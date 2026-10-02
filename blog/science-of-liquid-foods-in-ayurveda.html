@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#18100d" />
+    <meta name="theme-color" content="#f6f0e4" />
     
     <title>Soup Is Not Just a Japanese Trend: The Ancient Science of Liquid Foods in Ayurveda — RIDDHI Ayurveda Clinic</title>
     <meta name="description" content="Long before miso soup and bone broths became wellness trends, classical Ayurveda systematically classified liquid nutrition: Maṇḍa, Peyā, Vilepī, Yūṣa, and Māṃsarasa." />
@@ -71,13 +71,13 @@
     }
     </script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600;1,700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+    <!-- Self-hosted font preloads -->
+    <link rel="preload" href="../assets/fonts/cormorant-garamond-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../assets/fonts/cormorant-garamond-500.woff2" as="font" type="font/woff2" crossorigin />
+
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
-    <div class="blog-page-bg"></div>
 
     <header class="site-header">
       <div class="brand-lockup">
@@ -164,7 +164,7 @@
               सिक्थवर्जितो मण्डः पेया सिक्थसमन्विता ।<br />
               विलेपी बहुसिक्था स्याद्यवागूरविलद्रवा ॥
             </p>
-            <cite style="font-size: 0.82rem; color: var(--ivory-muted); text-transform: uppercase; letter-spacing: 0.12em;">— Suśruta Saṃhitā, Sūtrasthāna 46.342</cite>
+            <cite style="font-size: 0.82rem; color: var(--bark-soft); text-transform: uppercase; letter-spacing: 0.12em;">— Suśruta Saṃhitā, Sūtrasthāna 46.342</cite>
           </div>
 
           <p>
@@ -426,7 +426,7 @@
           try {
             await navigator.clipboard.writeText(window.location.href);
             copyBtnText.textContent = 'Copied!';
-            copyBtn.style.borderColor = 'var(--gold-accent)';
+            copyBtn.style.borderColor = 'var(--moss)';
             setTimeout(() => {
               copyBtnText.textContent = 'Copy Link';
               copyBtn.style.borderColor = '';

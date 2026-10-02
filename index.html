@@ -3,186 +3,210 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#18100d" />
-    <meta name="description" content="Riddhi Ayurveda Clinic — return to balance." />
-    <link rel="preload" as="image" href="./assets/images/hero.jpg" fetchpriority="high" />
-    <link rel="preload" as="image" href="./assets/images/philosophy-leaves.jpg" />
-    <link rel="preload" as="image" href="./assets/images/treatments-background.jpg" />
-    <link rel="preload" as="image" href="./assets/images/journey-ganesha.jpg" />
-    <link rel="preload" as="image" href="./assets/images/contact-canopy.jpg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600;1,700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+    <meta name="theme-color" content="#f6f0e4" />
+    <meta name="description" content="Riddhi Ayurveda Clinic — return to balance. Panchkarma and Yoga-Care in Rajkot, India." />
+    
+    <!-- Self-hosted Cormorant Garamond font preloads -->
+    <link rel="preload" href="./assets/fonts/cormorant-garamond-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="./assets/fonts/cormorant-garamond-500.woff2" as="font" type="font/woff2" crossorigin />
+    
+    <!-- Hero image preload -->
+    <link rel="preload" as="image" href="./assets/images/hero.webp" fetchpriority="high" />
+
     <link rel="stylesheet" href="styles.css" />
     <title>Riddhi Ayurveda Clinic</title>
   </head>
   <body>
-    <main>
-      <div class="fixed-bg-container" aria-hidden="true">
-        <div class="fixed-bg-slide is-active" data-bg-section="top">
-          <img src="./assets/images/hero.jpg" alt="" class="bg-img hero-bg" fetchpriority="high" />
-        </div>
-        <div class="fixed-bg-slide" data-bg-section="philosophy">
-          <img src="./assets/images/philosophy-leaves.jpg" alt="" class="bg-img philosophy-bg" loading="eager" />
-        </div>
-        <div class="fixed-bg-slide" data-bg-section="treatments">
-          <img src="./assets/images/treatments-background.jpg" alt="" class="bg-img treatments-bg" loading="eager" />
-        </div>
-        <div class="fixed-bg-slide" data-bg-section="journey">
-          <img src="./assets/images/journey-ganesha.jpg" alt="" class="bg-img journey-bg" loading="eager" />
-        </div>
-        <div class="fixed-bg-slide" data-bg-section="doctors">
-          <img src="./assets/images/philosophy-leaves.jpg" alt="" class="bg-img philosophy-bg" loading="eager" />
-        </div>
-        <div class="fixed-bg-slide" data-bg-section="stories">
-          <img src="./assets/images/treatments-background.jpg" alt="" class="bg-img treatments-bg" loading="eager" />
-        </div>
-        <div class="fixed-bg-slide" data-bg-section="journal">
-          <img src="./assets/images/treatments-background.jpg" alt="" class="bg-img treatments-bg" loading="eager" />
-        </div>
-        <div class="fixed-bg-slide" data-bg-section="contact">
-          <img src="./assets/images/contact-canopy.jpg" alt="" class="bg-img contact-bg" loading="eager" />
-        </div>
+    <!-- Sticky Navigation Header -->
+    <header class="site-header">
+      <div class="brand-lockup">
+        <a class="brand-wordmark" href="#top" aria-label="RIDDHI home">RIDDHI</a>
       </div>
 
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#treatments">Treatments</a>
+        <a href="#journey">Our Journey</a>
+        <a href="#doctors">Meet the Doctors</a>
+        <a href="#stories">Real Stories</a>
+        <a href="blogs.html">Blog</a>
+        <a href="https://wa.me/918793219610" target="_blank" rel="noopener noreferrer">Book an Appointment</a>
+      </nav>
+
+      <button class="menu-button" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation menu">
+        <span class="sr-only">Open menu</span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
       <section id="top" class="hero" aria-labelledby="hero-title">
-
-        <header class="site-header">
-          <div class="brand-lockup">
-            <a class="brand-wordmark" href="#top" aria-label="RIDDHI home">RIDDHI</a>
-          </div>
-
-          <nav class="desktop-nav" aria-label="Primary navigation">
-            <a href="#treatments">Treatments</a>
-            <a href="#journey">Our Journey</a>
-            <a href="#doctors">Meet the Doctors</a>
-            <a href="#stories">Real Stories</a>
-            <a href="blogs.html">Blog</a>
-            <a href="https://wa.me/918793219610" target="_blank" rel="noopener noreferrer">Book an Appointment</a>
-          </nav>
-
-          <button class="menu-button" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation menu">
-            <span class="sr-only">Open menu</span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </button>
-
-        </header>
-
-        <div class="hero__content">
+        <div class="hero__content fade-in">
           <h1 id="hero-title">Return to<br />balance.</h1>
           <p class="hero__statement">Panchkarma and Yoga-Care<br />in Rajkot, India.</p>
         </div>
       </section>
 
+      <!-- Philosophy Section -->
       <section id="philosophy" class="philosophy-section" aria-labelledby="philosophy-title">
-        <div class="philosophy-inner">
-          <div class="philosophy-heading-group">
+        <div class="philosophy-layout fade-in">
+          <div class="philosophy-inner">
+            <span class="section-label">OUR PHILOSOPHY</span>
+            <hr class="section-rule section-rule--left" />
             <h2 id="philosophy-title" class="philosophy-title">Before we treat,<br />we listen.</h2>
+            <div class="philosophy-body">
+              <p class="philosophy-support">Healing begins with understanding the person behind the illness.</p>
+              <p class="philosophy-closing">Balance in body, mind, and lifestyle leads to lasting wellness.</p>
+              <div class="philosophy-actions">
+                <a class="primary-action philosophy-action" href="https://wa.me/918793219610" target="_blank" rel="noopener noreferrer">Chat with us</a>
+              </div>
+            </div>
           </div>
-          <div class="philosophy-body">
-            <p class="philosophy-support">Healing begins with understanding the person behind the illness.</p>
-            <p class="philosophy-closing">Balance in body, mind, and lifestyle leads to lasting wellness.</p>
-            <div class="philosophy-actions">
-              <a class="primary-action philosophy-action" href="https://wa.me/918793219610" target="_blank" rel="noopener noreferrer">Chat with us</a>
+
+          <div class="philosophy-media">
+            <div class="arch-frame philosophy-frame">
+              <img src="./assets/images/philosophy-leaves.webp" alt="Medicinal herbs and Ayurvedic botanical leaves" width="767" height="1200" loading="lazy" />
             </div>
           </div>
         </div>
       </section>
 
+      <!-- Treatments Section -->
       <section id="treatments" class="care-section" aria-labelledby="care-title">
-        <div class="care-section__header">
+        <div class="care-section__header fade-in">
+          <span class="section-label">THERAPEUTIC CARE</span>
+          <hr class="section-rule" />
           <h2 id="care-title" class="care-section__title">Treatments</h2>
         </div>
 
-        <div class="care-carousel" role="region" aria-roledescription="carousel" aria-label="Treatments" tabindex="0">
-          <div class="care-track">
-            <article class="care-card">
-              <div class="care-card__media">
-                <img src="./assets/images/panchakarma.png" alt="A restorative herbal compress treatment" width="1365" height="2048" />
-              </div>
-              <div class="care-card__body">
-                <h3>Panchakarma</h3>
-                <p>Classical purification therapies tailored to individual needs.</p>
-              </div>
-            </article>
+        <div class="care-grid fade-in">
+          <!-- Card 01 -->
+          <article class="care-card">
+            <div class="care-card__top">
+              <span class="care-numeral">01</span>
+            </div>
+            <div class="care-card__media">
+              <img src="./assets/images/panchakarma.webp" alt="A restorative herbal compress treatment" width="675" height="1200" loading="lazy" />
+            </div>
+            <div class="care-card__body">
+              <h3>Panchakarma</h3>
+              <p>Classical purification therapies tailored to individual needs.</p>
+            </div>
+          </article>
 
-            <article class="care-card">
-              <div class="care-card__media">
-                <img src="./assets/images/womens-health.png" alt="A calendar and pregnancy test arranged with a tulip" width="1365" height="2048" />
-              </div>
-              <div class="care-card__body">
-                <h3>Women&rsquo;s Health</h3>
-                <p>Ayurvedic care through hormonal and reproductive health concerns.</p>
-              </div>
-            </article>
+          <!-- Card 02 -->
+          <article class="care-card">
+            <div class="care-card__top">
+              <span class="care-numeral">02</span>
+            </div>
+            <div class="care-card__media">
+              <img src="./assets/images/womens-health.webp" alt="A calendar and pregnancy test arranged with a tulip" width="799" height="1200" loading="lazy" />
+            </div>
+            <div class="care-card__body">
+              <h3>Women&rsquo;s Health</h3>
+              <p>Ayurvedic care through hormonal and reproductive health concerns.</p>
+            </div>
+          </article>
 
-            <article class="care-card">
-              <div class="care-card__media">
-                <img src="./assets/images/digestive-wellness.png" alt="An illustrative view of the digestive system" width="488" height="609" />
-              </div>
-              <div class="care-card__body">
-                <h3>Digestive Wellness</h3>
-                <p>Supporting digestion by restoring internal balance.</p>
-              </div>
-            </article>
+          <!-- Card 03 -->
+          <article class="care-card">
+            <div class="care-card__top">
+              <span class="care-numeral">03</span>
+            </div>
+            <div class="care-card__media">
+              <img src="./assets/images/digestive-wellness.webp" alt="An illustrative view of the digestive system" width="490" height="612" loading="lazy" />
+            </div>
+            <div class="care-card__body">
+              <h3>Digestive Wellness</h3>
+              <p>Supporting digestion by restoring internal balance.</p>
+            </div>
+          </article>
 
-            <article class="care-card">
-              <div class="care-card__media">
-                <img src="./assets/images/skin-disorders.png" alt="Hands applying a restorative cream" width="500" height="750" />
-              </div>
-              <div class="care-card__body">
-                <h3>Skin Disorders</h3>
-                <p>Personalized Ayurvedic care for recurring skin concerns.</p>
-              </div>
-            </article>
+          <!-- Card 04 -->
+          <article class="care-card">
+            <div class="care-card__top">
+              <span class="care-numeral">04</span>
+            </div>
+            <div class="care-card__media">
+              <img src="./assets/images/skin-disorders.webp" alt="Hands applying a restorative cream" width="500" height="749" loading="lazy" />
+            </div>
+            <div class="care-card__body">
+              <h3>Skin Disorders</h3>
+              <p>Personalized Ayurvedic care for recurring skin concerns.</p>
+            </div>
+          </article>
 
-            <article class="care-card">
-              <div class="care-card__media">
-                <img src="./assets/images/lifestyle-disorders.png" alt="A person resting in a quiet, minimal room" width="1365" height="2048" />
-              </div>
-              <div class="care-card__body">
-                <h3>Lifestyle Disorders</h3>
-                <p>Helping restore balance in today's fast-moving lifestyles.</p>
-              </div>
-            </article>
+          <!-- Card 05 -->
+          <article class="care-card">
+            <div class="care-card__top">
+              <span class="care-numeral">05</span>
+            </div>
+            <div class="care-card__media">
+              <img src="./assets/images/lifestyle-disorders.webp" alt="A person resting in a quiet, minimal room" width="799" height="1200" loading="lazy" />
+            </div>
+            <div class="care-card__body">
+              <h3>Lifestyle Disorders</h3>
+              <p>Helping restore balance in today's fast-moving lifestyles.</p>
+            </div>
+          </article>
 
-            <article class="care-card">
-              <div class="care-card__media">
-                <img src="./assets/images/nadi-pariksha.png" alt="A practitioner checking a patient's pulse" width="1365" height="2048" />
-              </div>
-              <div class="care-card__body">
-                <h3>Nadi Pariksha</h3>
-                <p>Pulse-based assessment used to understand the individual before treatment.</p>
-              </div>
-            </article>
+          <!-- Card 06 -->
+          <article class="care-card">
+            <div class="care-card__top">
+              <span class="care-numeral">06</span>
+            </div>
+            <div class="care-card__media">
+              <img src="./assets/images/nadi-pariksha.webp" alt="A practitioner checking a patient's pulse" width="799" height="1200" loading="lazy" />
+            </div>
+            <div class="care-card__body">
+              <h3>Nadi Pariksha</h3>
+              <p>Pulse-based assessment used to understand the individual before treatment.</p>
+            </div>
+          </article>
 
-            <article class="care-card">
-              <div class="care-card__media">
-                <img src="./assets/images/yoga-care.png" alt="A person practising yoga at sunset" width="1365" height="2048" />
-              </div>
-              <div class="care-card__body">
-                <h3>Yoga Care</h3>
-                <p>Therapeutic movement supporting recovery, mobility, and balance.</p>
-              </div>
-            </article>
+          <!-- Card 07 -->
+          <article class="care-card">
+            <div class="care-card__top">
+              <span class="care-numeral">07</span>
+            </div>
+            <div class="care-card__media">
+              <img src="./assets/images/yoga-care.webp" alt="A person practising yoga at sunset" width="799" height="1200" loading="lazy" />
+            </div>
+            <div class="care-card__body">
+              <h3>Yoga Care</h3>
+              <p>Therapeutic movement supporting recovery, mobility, and balance.</p>
+            </div>
+          </article>
 
-            <article class="care-card">
-              <div class="care-card__media">
-                <img src="./assets/images/diet-guidance.png" alt="A balanced meal with grains, vegetables, fruit, and spices" width="1365" height="2048" />
-              </div>
-              <div class="care-card__body">
-                <h3>Diet &amp; Lifestyle Guidance</h3>
-                <p>Practical everyday changes that support lasting health.</p>
-              </div>
-            </article>
-          </div>
+          <!-- Card 08 -->
+          <article class="care-card">
+            <div class="care-card__top">
+              <span class="care-numeral">08</span>
+            </div>
+            <div class="care-card__media">
+              <img src="./assets/images/diet-guidance.webp" alt="A balanced meal with grains, vegetables, fruit, and spices" width="799" height="1200" loading="lazy" />
+            </div>
+            <div class="care-card__body">
+              <h3>Diet &amp; Lifestyle Guidance</h3>
+              <p>Practical everyday changes that support lasting health.</p>
+            </div>
+          </article>
         </div>
       </section>
 
+      <!-- Journey Section -->
       <section id="journey" class="journey-section" aria-labelledby="journey-title">
-        <div class="journey-inner">
+        <div class="journey-layout fade-in">
+          <div class="journey-media">
+            <div class="arch-frame journey-frame">
+              <img src="./assets/images/journey-ganesha.webp" alt="Ganesha sculpture in quiet devotion" width="899" height="1200" loading="lazy" />
+            </div>
+          </div>
+
           <div class="journey-content">
+            <span class="section-label">OUR PURPOSE</span>
+            <hr class="section-rule section-rule--left" />
             <h2 id="journey-title" class="journey-title">More than a clinic.<span>A purpose we nurture.</span></h2>
 
             <div class="journey-story">
@@ -197,22 +221,25 @@
         </div>
       </section>
 
+      <!-- Doctors Section -->
       <section id="doctors" class="doctors-section" aria-labelledby="doctors-title">
-        <div class="doctors-intro">
-          <h2 id="doctors-title" class="doctors-title">Meet The Doctors</h2>
-          <!-- <p class="doctors-subtitle">Educated at the renowned Tilak Ayurveda Mahavidyalaya, Pune, and disciples of the great Vaidya Dr. Dilip Gadgil, Pune.</p> -->
+        <div class="section-header fade-in">
+          <span class="section-label">CLINICAL DIRECTORS</span>
+          <hr class="section-rule" />
+          <h2 id="doctors-title" class="section-title">Meet The Doctors</h2>
         </div>
 
-        <div class="doctors-spread">
+        <div class="doctors-spread fade-in">
+          <!-- Doctor 1: Dr. Minakshee -->
           <article class="doctor-card" aria-labelledby="minakshee-name">
-            <div class="doctor-photo doctor-photo--minakshee">
-              <img src="./assets/images/dr-minakshee.jpg" alt="Dr. Minakshee Vijay Telang seated in her clinic" loading="lazy" />
+            <div class="doctor-photo">
+              <img src="./assets/images/dr-minakshee.webp" alt="Dr. Minakshee Vijay Telang seated in her clinic" width="900" height="1200" loading="lazy" />
             </div>
-            <div class="doctor-description doctor-description--minakshee">
+            <div class="doctor-description">
               <h3 id="minakshee-name" class="doctor-name">Dr. Minakshee Vijay Telang</h3>
               <p class="doctor-role">Consultant</p>
               <p class="doctor-credentials">MD Ayurveda | PhD Scholar<br />MA Sanskrit Vyakarana | Jyotish Pravin</p>
-              <p class="doctor-bio"> Educated at the renowned Tilak Ayurveda Mahavidyalaya, Pune, and the disciple of the great Vaidya Dr. Dilip Gadgil, Pune. Specialised in Panchakarma, Nadi Pariksha and Yoga-based therapies, with an approach rooted in careful assessment and deeply personalised care.</p>
+              <p class="doctor-bio">Educated at the renowned Tilak Ayurveda Mahavidyalaya, Pune, and the disciple of the great Vaidya Dr. Dilip Gadgil, Pune. Specialised in Panchakarma, Nadi Pariksha and Yoga-based therapies, with an approach rooted in careful assessment and deeply personalised care.</p>
               <div class="doctor-availability">
                 <p class="doctor-availability__label">Availability</p>
                 <p>Monday, Wednesday &amp; Friday<br />6:30 PM&ndash;8:30 PM</p>
@@ -220,11 +247,12 @@
             </div>
           </article>
 
+          <!-- Doctor 2: Dr. Vijay -->
           <article class="doctor-card" aria-labelledby="vijay-name">
-            <div class="doctor-photo doctor-photo--vijay">
-              <img src="./assets/images/dr-vijay.jpg" alt="Dr. Vijay Telang with a young patient" loading="lazy" />
+            <div class="doctor-photo">
+              <img src="./assets/images/dr-vijay.webp" alt="Dr. Vijay Telang with a young patient" width="1200" height="799" loading="lazy" />
             </div>
-            <div class="doctor-description doctor-description--vijay">
+            <div class="doctor-description">
               <h3 id="vijay-name" class="doctor-name">Dr. Vijay Telang</h3>
               <p class="doctor-role">Chief Consultant &amp; Director</p>
               <p class="doctor-credentials">BAMS | MD Ayurveda | PhD Scholar</p>
@@ -239,27 +267,30 @@
         </div>
       </section>
 
-      <section id="stories" class="stories-section" aria-labelledby="stories-title">
+      <!-- Stories Anchor -->
+      <section id="stories" class="stories-section" aria-label="Real Stories">
         <h2 id="stories-title" class="sr-only">Real Stories</h2>
       </section>
 
+      <!-- Journal Section -->
       <section id="journal" class="journal-section" aria-labelledby="journal-title">
-        <div class="journal-header">
+        <div class="journal-header fade-in">
           <div>
-            <p class="eyebrow">PERSPECTIVES &amp; INSIGHTS</p>
+            <span class="section-label">PERSPECTIVES &amp; INSIGHTS</span>
+            <hr class="section-rule section-rule--left" />
             <h2 id="journal-title" class="journal-title">From Our Journal</h2>
             <p class="journal-subtitle">Essays on classical Ayurveda, constitutional balance, and mindful health.</p>
           </div>
-          <a class="text-action" href="blogs.html" style="font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold-accent);">
+          <a class="text-action" href="blogs.html">
             View All Articles <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
 
-        <div class="blog-grid" style="margin-bottom: 0;">
-          <!-- Latest Article -->
+        <div class="blog-grid fade-in">
+          <!-- Article 1 -->
           <article class="blog-card">
             <a href="blog/science-of-liquid-foods-in-ayurveda.html" class="blog-card-media" tabindex="-1" aria-hidden="true">
-              <img src="./assets/images/digestive-wellness.png" alt="Ayurvedic liquid food preparation and digestive wellness" loading="lazy" />
+              <img src="./assets/images/digestive-wellness.webp" alt="Ayurvedic liquid food preparation and digestive wellness" width="490" height="612" loading="lazy" />
               <span class="blog-card-category">Nutrition &amp; Āhāra</span>
             </a>
             <div class="blog-card-content">
@@ -269,7 +300,7 @@
                 <span>Bhadrapada Shuddh Saptami</span>
               </div>
               <h3 class="blog-card-title">
-                <a href="blog/science-of-liquid-foods-in-ayurveda.html" style="text-decoration: none; color: inherit;">
+                <a href="blog/science-of-liquid-foods-in-ayurveda.html">
                   Soup Is Not Just a Japanese Trend: The Ancient Science of Liquid Foods in Ayurveda
                 </a>
               </h3>
@@ -279,8 +310,8 @@
               <div class="blog-card-footer">
                 <div class="blog-card-author">
                   <div class="blog-author-avatar-group">
-                    <img src="./assets/images/dr-vijay.jpg" alt="Dr. Vijay Telang" class="blog-author-avatar" />
-                    <img src="./assets/images/dr-minakshee.jpg" alt="Dr. Minakshee Vijay Telang" class="blog-author-avatar" />
+                    <img src="./assets/images/dr-vijay.webp" alt="Dr. Vijay Telang" width="32" height="32" class="blog-author-avatar" loading="lazy" />
+                    <img src="./assets/images/dr-minakshee.webp" alt="Dr. Minakshee Vijay Telang" width="32" height="32" class="blog-author-avatar" loading="lazy" />
                   </div>
                   <span>Dr. Vijay &amp; Dr. Minakshee</span>
                 </div>
@@ -291,10 +322,10 @@
             </div>
           </article>
 
-          <!-- Second Article -->
+          <!-- Article 2 -->
           <article class="blog-card">
             <a href="blog/sravana-krishna-shashthi-monsoon-ayurveda.html" class="blog-card-media" tabindex="-1" aria-hidden="true">
-              <img src="./assets/images/diet-guidance.png" alt="Ayurvedic monsoon seasonal nutrition and diet" loading="lazy" />
+              <img src="./assets/images/diet-guidance.webp" alt="Ayurvedic monsoon seasonal nutrition and diet" width="799" height="1200" loading="lazy" />
               <span class="blog-card-category">Seasonal Living</span>
             </a>
             <div class="blog-card-content">
@@ -304,7 +335,7 @@
                 <span>Śrāvaṇa Krishna Ṣaṣṭhī</span>
               </div>
               <h3 class="blog-card-title">
-                <a href="blog/sravana-krishna-shashthi-monsoon-ayurveda.html" style="text-decoration: none; color: inherit;">
+                <a href="blog/sravana-krishna-shashthi-monsoon-ayurveda.html">
                   Śrāvaṇa Krishna Ṣaṣṭhī: Looking at a Traditional Observance Through Ayurveda
                 </a>
               </h3>
@@ -314,8 +345,8 @@
               <div class="blog-card-footer">
                 <div class="blog-card-author">
                   <div class="blog-author-avatar-group">
-                    <img src="./assets/images/dr-vijay.jpg" alt="Dr. Vijay Telang" class="blog-author-avatar" />
-                    <img src="./assets/images/dr-minakshee.jpg" alt="Dr. Minakshee Vijay Telang" class="blog-author-avatar" />
+                    <img src="./assets/images/dr-vijay.webp" alt="Dr. Vijay Telang" width="32" height="32" class="blog-author-avatar" loading="lazy" />
+                    <img src="./assets/images/dr-minakshee.webp" alt="Dr. Minakshee Vijay Telang" width="32" height="32" class="blog-author-avatar" loading="lazy" />
                   </div>
                   <span>Dr. Vijay &amp; Dr. Minakshee</span>
                 </div>
@@ -328,18 +359,18 @@
         </div>
       </section>
 
+      <!-- Contact & Footer Section -->
       <section id="contact" class="contact-section" aria-labelledby="contact-title">
-        <div class="contact-layout">
+        <div class="contact-layout fade-in">
           <div class="contact-content">
-            <!-- <p class="contact-eyebrow">BEGIN YOUR JOURNEY</p> -->
             <h2 id="contact-title" class="contact-title">Care begins<br />with a conversation.</h2>
             <p class="contact-support">Reach out to schedule a consultation or speak with the clinic team.</p>
 
             <div class="contact-hours">
-            <p class="contact-details__label">Clinic Hours</p>
-            <p>Monday&ndash;Saturday<br />6:30 PM&ndash;8:30 PM</p>
-            <p>Sunday by appointment.</p>
-          </div>
+              <p class="contact-details__label">Clinic Hours</p>
+              <p>Monday&ndash;Saturday<br />6:30 PM&ndash;8:30 PM</p>
+              <p>Sunday by appointment.</p>
+            </div>
 
             <div class="contact-actions">
               <a class="primary-action contact-primary" href="https://wa.me/918793219610" target="_blank" rel="noopener noreferrer">Book an Appointment</a>
@@ -356,6 +387,8 @@
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.084278660608!2d70.78016947415281!3d22.350446379650467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959c9337be4d191%3A0x764aa798b7d2aed9!2sRIDDHI%20AYURVEDA%20CLINIC!5e0!3m2!1sen!2sin!4v1784940006522!5m2!1sen!2sin"
                 title="RIDDHI Ayurveda Clinic location on Google Maps"
+                width="600"
+                height="400"
                 loading="lazy"
                 allowfullscreen
                 referrerpolicy="strict-origin-when-cross-origin"
@@ -363,11 +396,9 @@
             </div>
             <a class="contact-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=RIDDHI%20AYURVEDA%20CLINIC%2C%20Rajkot" target="_blank" rel="noopener noreferrer">View on Google Maps</a>
           </div>
-
-          
         </div>
 
-        <a class="section-back-top section-back-top--light contact-back-top" href="#top">Back to top <span aria-hidden="true">&uarr;</span></a>
+        <a class="section-back-top" href="#top">Back to top <span aria-hidden="true">&uarr;</span></a>
 
         <footer class="site-footer">
           <p>RIDDHI Ayurveda Clinic &copy; 2026</p>
@@ -376,6 +407,7 @@
       </section>
     </main>
 
+    <!-- Mobile Navigation Drawer -->
     <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" hidden>
       <div class="mobile-menu__top">
         <span class="brand-wordmark brand-wordmark--menu" aria-label="RIDDHI">RIDDHI</span>

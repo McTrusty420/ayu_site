@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#18100d" />
+    <meta name="theme-color" content="#f6f0e4" />
     
     <title>Journal &amp; Insights — RIDDHI Ayurveda Clinic</title>
     <meta name="description" content="Read clinical insights, timeless philosophy, and practical guidance on classical Ayurveda, Panchakarma, nutrition, and holistic health from RIDDHI Ayurveda Clinic, Rajkot." />
@@ -14,13 +14,13 @@
     <meta property="og:url" content="https://riddhiayurveda.online/blogs.html" />
     <meta property="og:title" content="Journal &amp; Insights — RIDDHI Ayurveda Clinic" />
     <meta property="og:description" content="Clinical insights on classical Ayurveda, Panchakarma, and holistic living from Dr. Vijay Telang and Dr. Minakshee Vijay Telang." />
-    <meta property="og:image" content="https://riddhiayurveda.online/assets/images/panchakarma.png" />
+    <meta property="og:image" content="https://riddhiayurveda.online/assets/images/panchakarma.webp" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Journal &amp; Insights — RIDDHI Ayurveda Clinic" />
     <meta name="twitter:description" content="Clinical insights on classical Ayurveda, Panchakarma, and holistic living from Dr. Vijay Telang and Dr. Minakshee Vijay Telang." />
-    <meta name="twitter:image" content="https://riddhiayurveda.online/assets/images/panchakarma.png" />
+    <meta name="twitter:image" content="https://riddhiayurveda.online/assets/images/panchakarma.webp" />
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
@@ -70,14 +70,14 @@
     }
     </script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600;1,700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+    <!-- Self-hosted font preloads -->
+    <link rel="preload" href="./assets/fonts/cormorant-garamond-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="./assets/fonts/cormorant-garamond-500.woff2" as="font" type="font/woff2" crossorigin />
+
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="blog-page-bg"></div>
-
+    <!-- Sticky Navigation Header -->
     <header class="site-header">
       <div class="brand-lockup">
         <a class="brand-wordmark" href="index.html" aria-label="RIDDHI home">RIDDHI</a>
@@ -100,17 +100,18 @@
     </header>
 
     <main class="blog-container">
-      <div class="blog-header">
+      <div class="blog-header fade-in">
         <span class="blog-eyebrow">RIDDHI CLINICAL JOURNAL</span>
+        <hr class="section-rule" />
         <h1 class="blog-title">Insights &amp; Perspectives</h1>
         <p class="blog-subtitle">Essays on classical Ayurveda, constitutional healing, Panchakarma, and intentional living.</p>
       </div>
 
-      <section class="blog-grid" aria-label="Articles">
+      <section class="blog-grid fade-in" aria-label="Articles">
         <!-- Article 1 (Newest) -->
         <article class="blog-card">
           <a href="blog/science-of-liquid-foods-in-ayurveda.html" class="blog-card-media" tabindex="-1" aria-hidden="true">
-            <img src="https://images.pexels.com/photos/12077976/pexels-photo-12077976.jpeg" alt="Ayurvedic liquid food preparation and digestive wellness" loading="lazy" />
+            <img src="./assets/images/digestive-wellness.webp" alt="Ayurvedic liquid food preparation and digestive wellness" width="490" height="612" loading="lazy" />
             <span class="blog-card-category">Nutrition &amp; Āhāra</span>
           </a>
           
@@ -122,7 +123,7 @@
             </div>
             
             <h2 class="blog-card-title">
-              <a href="blog/science-of-liquid-foods-in-ayurveda.html" style="text-decoration: none; color: inherit;">
+              <a href="blog/science-of-liquid-foods-in-ayurveda.html">
                 Soup Is Not Just a Japanese Trend: The Ancient Science of Liquid Foods in Ayurveda
               </a>
             </h2>
@@ -134,8 +135,8 @@
             <div class="blog-card-footer">
               <div class="blog-card-author">
                 <div class="blog-author-avatar-group">
-                  <img src="./assets/images/dr-vijay.jpg" alt="Dr. Vijay Telang" class="blog-author-avatar" />
-                  <img src="./assets/images/dr-minakshee.jpg" alt="Dr. Minakshee Vijay Telang" class="blog-author-avatar" />
+                  <img src="./assets/images/dr-vijay.webp" alt="Dr. Vijay Telang" width="32" height="32" class="blog-author-avatar" loading="lazy" />
+                  <img src="./assets/images/dr-minakshee.webp" alt="Dr. Minakshee Vijay Telang" width="32" height="32" class="blog-author-avatar" loading="lazy" />
                 </div>
                 <span>Dr. Vijay &amp; Dr. Minakshee</span>
               </div>
@@ -154,7 +155,7 @@
         <!-- Article 2 -->
         <article class="blog-card">
           <a href="blog/sravana-krishna-shashthi-monsoon-ayurveda.html" class="blog-card-media" tabindex="-1" aria-hidden="true">
-            <img src="./assets/images/diet-guidance.png" alt="Ayurvedic monsoon seasonal nutrition and diet" loading="lazy" />
+            <img src="./assets/images/diet-guidance.webp" alt="Ayurvedic monsoon seasonal nutrition and diet" width="799" height="1200" loading="lazy" />
             <span class="blog-card-category">Seasonal Living</span>
           </a>
           
@@ -166,7 +167,7 @@
             </div>
             
             <h2 class="blog-card-title">
-              <a href="blog/sravana-krishna-shashthi-monsoon-ayurveda.html" style="text-decoration: none; color: inherit;">
+              <a href="blog/sravana-krishna-shashthi-monsoon-ayurveda.html">
                 Śrāvaṇa Krishna Ṣaṣṭhī: Looking at a Traditional Observance Through Ayurveda
               </a>
             </h2>
@@ -178,8 +179,8 @@
             <div class="blog-card-footer">
               <div class="blog-card-author">
                 <div class="blog-author-avatar-group">
-                  <img src="./assets/images/dr-vijay.jpg" alt="Dr. Vijay Telang" class="blog-author-avatar" />
-                  <img src="./assets/images/dr-minakshee.jpg" alt="Dr. Minakshee Vijay Telang" class="blog-author-avatar" />
+                  <img src="./assets/images/dr-vijay.webp" alt="Dr. Vijay Telang" width="32" height="32" class="blog-author-avatar" loading="lazy" />
+                  <img src="./assets/images/dr-minakshee.webp" alt="Dr. Minakshee Vijay Telang" width="32" height="32" class="blog-author-avatar" loading="lazy" />
                 </div>
                 <span>Dr. Vijay &amp; Dr. Minakshee</span>
               </div>
@@ -198,7 +199,7 @@
         <!-- Article 3 -->
         <article class="blog-card">
           <a href="blog/ayurveda-for-beginners.html" class="blog-card-media" tabindex="-1" aria-hidden="true">
-            <img src="./assets/images/panchakarma.png" alt="Ayurvedic therapies and holistic balance" loading="lazy" />
+            <img src="./assets/images/panchakarma.webp" alt="Ayurvedic therapies and holistic balance" width="675" height="1200" loading="lazy" />
             <span class="blog-card-category">Foundations</span>
           </a>
           
@@ -210,7 +211,7 @@
             </div>
             
             <h2 class="blog-card-title">
-              <a href="blog/ayurveda-for-beginners.html" style="text-decoration: none; color: inherit;">
+              <a href="blog/ayurveda-for-beginners.html">
                 Ayurveda for Beginners: Why Traditional Wisdom Still Matters in the Age of AI
               </a>
             </h2>
@@ -222,8 +223,8 @@
             <div class="blog-card-footer">
               <div class="blog-card-author">
                 <div class="blog-author-avatar-group">
-                  <img src="./assets/images/dr-vijay.jpg" alt="Dr. Vijay Telang" class="blog-author-avatar" />
-                  <img src="./assets/images/dr-minakshee.jpg" alt="Dr. Minakshee Vijay Telang" class="blog-author-avatar" />
+                  <img src="./assets/images/dr-vijay.webp" alt="Dr. Vijay Telang" width="32" height="32" class="blog-author-avatar" loading="lazy" />
+                  <img src="./assets/images/dr-minakshee.webp" alt="Dr. Minakshee Vijay Telang" width="32" height="32" class="blog-author-avatar" loading="lazy" />
                 </div>
                 <span>Dr. Vijay &amp; Dr. Minakshee</span>
               </div>
