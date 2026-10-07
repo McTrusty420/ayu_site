@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="has-intro">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,9 +14,20 @@
     <link rel="preload" as="image" href="./assets/images/hero.webp" fetchpriority="high" />
 
     <link rel="stylesheet" href="styles.css" />
+    <noscript>
+      <style>
+        .intro-backdrop { display: none !important; }
+        .site-header .brand-wordmark, .desktop-nav, .menu-button, .hero__content { opacity: 1 !important; transform: none !important; }
+      </style>
+    </noscript>
     <title>Riddhi Ayurveda Clinic</title>
   </head>
   <body>
+    <!-- Valar-Style Intro Overlay -->
+    <div class="intro-backdrop" id="intro-backdrop" aria-hidden="true">
+      <span class="intro-wordmark">RIDDHI</span>
+    </div>
+
     <!-- Sticky Navigation Header -->
     <header class="site-header">
       <div class="brand-lockup">

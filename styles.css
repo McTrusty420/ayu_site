@@ -276,8 +276,8 @@ p:last-child {
   right: 0;
   z-index: 100;
   height: var(--header-height);
-  background-color: var(--ivory);
-  border-bottom: 1px solid var(--line);
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -294,6 +294,7 @@ p:last-child {
   font-size: 1.85rem;
   font-weight: 600;
   letter-spacing: 0.12em;
+  line-height: 1;
   color: var(--bark) !important;
   text-decoration: none !important;
 }
@@ -493,9 +494,9 @@ p:last-child {
   position: relative;
   z-index: 2;
   max-width: 38rem;
-  background-color: rgba(246, 240, 228, 0.94);
+  background-color: transparent;
   padding: clamp(2rem, 5vw, 3.5rem);
-  border: 1px solid var(--line);
+  border: none;
   border-radius: 8px;
   margin-top: 2rem;
 }
@@ -1603,3 +1604,99 @@ p:last-child {
   color: var(--bark-soft);
   margin: 0;
 }
+
+/* ==========================================================================
+   INTRO OVERLAY & VALAR-STYLE SCROLL TRANSITION
+   ========================================================================== */
+.intro-backdrop {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 999;
+  background-color: var(--ivory);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1), visibility 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.intro-wordmark {
+  display: inline-block;
+  font-family: var(--serif);
+  font-size: clamp(3.2rem, 8vw, 6.25rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--bark);
+  line-height: 1;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  transform-origin: center center;
+  transition: transform 1.25s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* While intro is active on initial load */
+html.has-intro .site-header .brand-wordmark {
+  opacity: 0;
+}
+
+html.has-intro .desktop-nav,
+html.has-intro .menu-button {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+html.has-intro .hero__content {
+  opacity: 0 !important;
+  transform: translateY(28px) !important;
+}
+
+/* While intro is transitioning on scroll */
+html.intro-transitioning .intro-backdrop {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+html.intro-transitioning .desktop-nav,
+html.intro-transitioning .menu-button {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
+}
+
+html.intro-transitioning .hero__content {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s, transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s !important;
+}
+
+/* Once intro transition is completed */
+html.intro-done .site-header .brand-wordmark {
+  opacity: 1;
+}
+
+html.intro-done .intro-backdrop {
+  display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-backdrop {
+    display: none !important;
+  }
+  .site-header .brand-wordmark,
+  .desktop-nav,
+  .menu-button,
+  .hero__content {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
