@@ -2011,3 +2011,9 @@ html:not(.is-ready) .hero__cue {
 	background: var(--moss);
 	color: var(--ivory);
 }
+
+.article-share-bar {
+	margin-top: 3rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--line);
+}
