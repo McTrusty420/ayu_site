@@ -1,9 +1,9 @@
 /**
  * RIDDHI Ayurveda Clinic
- * Lightweight Vanilla Interactions (< 2 KB)
+ * Native Vanilla Interactions (< 2 KB)
  */
 document.addEventListener('DOMContentLoaded', () => {
-  // Mobile Navigation Menu
+  // 1. Mobile Navigation Drawer
   const menuButton = document.querySelector('.menu-button');
   const mobileMenu = document.querySelector('.mobile-menu');
   const closeButton = document.querySelector('.menu-close');
@@ -49,122 +49,108 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Content Fade-in with 16px Rise via IntersectionObserver
+  // 2. Fixed Navbar Solid Transition (IntersectionObserver on 1px sentinel)
+  const sentinel = document.getElementById('top-sentinel');
+  const siteHeader = document.querySelector('.site-header');
+
+  if (siteHeader) {
+    if (sentinel && 'IntersectionObserver' in window) {
+      const navObserver = new IntersectionObserver(([entry]) => {
+        siteHeader.classList.toggle('nav--solid', !entry.isIntersecting && entry.boundingClientRect.top <= 0);
+      }, { threshold: 0 });
+      navObserver.observe(sentinel);
+    } else {
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            siteHeader.classList.toggle('nav--solid', window.scrollY > 40);
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+    }
+  }
+
+  // 3. Scroll Reveal Animations (IntersectionObserver rootMargin: "0px 0px -10% 0px")
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const fadeElements = document.querySelectorAll('.fade-in');
 
   if (prefersReduced || !('IntersectionObserver' in window)) {
     fadeElements.forEach((el) => el.classList.add('is-visible'));
   } else {
-    const observer = new IntersectionObserver((entries, obs) => {
+    const scrollObserver = new IntersectionObserver((entries, obs) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
           obs.unobserve(entry.target);
+          entry.target.addEventListener('transitionend', () => {
+            entry.target.style.willChange = 'auto';
+          }, { once: true });
         }
       });
     }, {
-      rootMargin: '0px 0px -40px 0px',
-      threshold: 0.12
+      rootMargin: '0px 0px -10% 0px',
+      threshold: 0.1
     });
 
-    fadeElements.forEach((el) => observer.observe(el));
-  }
-
-  // Valar-Style Intro Animation Transition on Scroll
-  const introBackdrop = document.getElementById('intro-backdrop');
-  const introWordmark = document.querySelector('.intro-wordmark');
-  const brandWordmark = document.querySelector('.site-header .brand-wordmark');
-
-  if (introBackdrop && introWordmark && brandWordmark) {
-    const hasHash = window.location.hash && window.location.hash !== '#top';
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if (hasHash || prefersReducedMotion) {
-      document.documentElement.classList.remove('has-intro');
-      document.documentElement.classList.add('intro-done');
-      introBackdrop.style.display = 'none';
-    } else {
-      if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
+    fadeElements.forEach((el) => {
+      if (!el.closest('.hero')) {
+        scrollObserver.observe(el);
       }
-      window.scrollTo(0, 0);
-
-      let isTransitioning = false;
-      let isIntroDone = false;
-
-      const runTransition = () => {
-        if (isTransitioning || isIntroDone) return;
-        isTransitioning = true;
-
-        const brandRect = brandWordmark.getBoundingClientRect();
-        const introRect = introWordmark.getBoundingClientRect();
-
-        const brandCenterX = brandRect.left + brandRect.width / 2;
-        const brandCenterY = brandRect.top + brandRect.height / 2;
-
-        const introCenterX = introRect.left + introRect.width / 2;
-        const introCenterY = introRect.top + introRect.height / 2;
-
-        const deltaX = brandCenterX - introCenterX;
-        const deltaY = brandCenterY - introCenterY;
-
-        const brandFontSize = parseFloat(window.getComputedStyle(brandWordmark).fontSize) || 29.6;
-        const introFontSize = parseFloat(window.getComputedStyle(introWordmark).fontSize) || 64;
-        const scale = brandFontSize / introFontSize;
-
-        introWordmark.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(${scale})`;
-
-        document.documentElement.classList.remove('has-intro');
-        document.documentElement.classList.add('intro-transitioning');
-
-        let lockScroll = true;
-        const keepAtTop = () => {
-          if (lockScroll) window.scrollTo(0, 0);
-        };
-        window.addEventListener('scroll', keepAtTop, { passive: true });
-
-        setTimeout(() => {
-          lockScroll = false;
-          window.removeEventListener('scroll', keepAtTop);
-          isIntroDone = true;
-          isTransitioning = false;
-          document.documentElement.classList.remove('intro-transitioning');
-          document.documentElement.classList.add('intro-done');
-          introBackdrop.style.display = 'none';
-        }, 1250);
-      };
-
-      window.addEventListener('wheel', (e) => {
-        if (e.deltaY > 0) runTransition();
-      }, { passive: true });
-
-      let touchStartY = 0;
-      window.addEventListener('touchstart', (e) => {
-        if (e.touches && e.touches[0]) {
-          touchStartY = e.touches[0].clientY;
-        }
-      }, { passive: true });
-
-      window.addEventListener('touchmove', (e) => {
-        if (e.touches && e.touches[0]) {
-          const deltaY = touchStartY - e.touches[0].clientY;
-          if (deltaY > 6) runTransition();
-        }
-      }, { passive: true });
-
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 0) runTransition();
-      }, { passive: true });
-
-      window.addEventListener('keydown', (e) => {
-        if (['ArrowDown', 'PageDown', ' ', 'ArrowRight', 'End'].includes(e.key)) {
-          runTransition();
-        }
-      });
-
-      introBackdrop.addEventListener('click', runTransition);
-    }
+    });
   }
-});
 
+  // 4. Choreographed Page-Load Intro Timeline
+  const hero = document.querySelector('.hero');
+  const root = document.documentElement;
+
+  if (prefersReduced) {
+    root.classList.remove('is-loading');
+    root.classList.add('is-ready', 'intro-completed');
+    return;
+  }
+
+  if (!hero) {
+    root.classList.remove('is-loading');
+    root.classList.add('is-ready', 'no-hero', 'intro-completed');
+    return;
+  }
+
+  // 4s safety fallback
+  const fallbackTimer = setTimeout(() => {
+    root.classList.remove('is-loading');
+    root.classList.add('is-ready');
+  }, 4000);
+
+  const heroImage = hero.querySelector('.hero__image');
+
+  // Decode hero image (or Image() preload with fallback)
+  const imageDecodePromise = heroImage
+    ? (heroImage.complete ? heroImage.decode().catch(() => {}) : new Promise((resolve) => {
+        heroImage.addEventListener('load', () => heroImage.decode().catch(() => {}).then(resolve), { once: true });
+        heroImage.addEventListener('error', resolve, { once: true });
+      }))
+    : Promise.resolve();
+
+  // Wait for web fonts ready
+  const fontsPromise = document.fonts ? document.fonts.ready.catch(() => {}) : Promise.resolve();
+
+  // 2.5s timeout race so page never hangs
+  const timeoutPromise = new Promise((resolve) => setTimeout(resolve, 2500));
+
+  Promise.race([
+    Promise.all([imageDecodePromise, fontsPromise]),
+    timeoutPromise
+  ]).then(() => {
+    clearTimeout(fallbackTimer);
+    root.classList.remove('is-loading');
+    root.classList.add('is-ready');
+
+    // Remove will-change after sequence ends
+    setTimeout(() => {
+      root.classList.add('intro-completed');
+    }, 2200);
+  });
+});
