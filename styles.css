@@ -1334,7 +1334,7 @@ html:not(.is-ready) .hero__cue {
 
 .blog-card-category {
 	position: absolute;
-	top: 1rem;
+	bottom: 1rem;
 	left: 1rem;
 	background-color: var(--ivory);
 	color: var(--moss);
