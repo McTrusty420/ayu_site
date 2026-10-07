@@ -636,7 +636,6 @@ body:not(:has(.hero)) .article-container {
 	height: 100vh;
 	height: 100svh;
 	background-color: var(--ivory);
-	color: white;
 }
 
 /* scroll runway: the stage stays pinned while --p goes 0 to 1 */
@@ -715,6 +714,7 @@ html.is-ready .hero__image {
 .wm-c {
 	display: inline-block;
 	clip-path: inset(0 -0.15em);
+	color: white;
 }
 
 .wm-c>span {
