@@ -106,6 +106,74 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 3b. Hero: scroll-driven opening (full-screen wordmark -> card + headline)
+  const heroEl = document.querySelector('.hero');
+  const stage = document.querySelector('.hero__stage');
+  const wordmark = document.querySelector('.hero__wordmark');
+  const rootEl = document.documentElement;
+
+  if (heroEl && stage && wordmark) {
+    const mobileQuery = window.matchMedia('(max-width: 52rem)');
+    const clamp01 = (v) => Math.min(1, Math.max(0, v));
+    const setVar = (name, value) => stage.style.setProperty(name, value);
+    let vw = 0;
+    let vh = 0;
+
+    // Size the wordmark to span the screen, and work out where it ends up
+    const fit = () => {
+      vw = heroEl.clientWidth;
+      vh = stage.offsetHeight;
+      const mobile = mobileQuery.matches;
+
+      setVar('--F', '100px');
+      const widthAt100 = wordmark.firstElementChild.offsetWidth || 1;
+      const size = (100 * vw) / widthAt100;
+      setVar('--F', size.toFixed(1) + 'px');
+
+      const startY = vh - size * 0.315 - Math.max(10, vh * 0.015); // letters sit on the bottom edge
+      const endX = mobile ? vw / 2 : vw / 4;
+      const endY = mobile ? vh * 0.24 : vh / 2;
+      const panelWidth = mobile ? vw : vw / 2;
+      const finalWidth = Math.min(300, panelWidth * 0.62);
+
+      setVar('--oy', (startY - vh / 2).toFixed(1) + 'px');
+      setVar('--dx', (endX - vw / 2).toFixed(1) + 'px');
+      setVar('--dy', (endY - startY).toFixed(1) + 'px');
+      setVar('--ks', (1 - finalWidth / vw).toFixed(4));
+      setVar('--ix', mobile ? '0px' : (-vw * 0.25).toFixed(1) + 'px');
+    };
+
+    // Progress 0..1 comes only from the scroll position, never from a timer
+    const update = () => {
+      const runway = heroEl.offsetHeight - vh;
+      const q = runway > 0 ? -heroEl.getBoundingClientRect().top / runway : 1;
+      const p = clamp01(q);
+      setVar('--p', p.toFixed(4));
+      rootEl.classList.toggle('hero-settled', p >= 0.9);
+      rootEl.classList.toggle('hero-past', q >= 1);
+    };
+
+    const run = () => { fit(); update(); };
+
+    if (prefersReduced) {
+      // No scrubbing: show the final layout straight away
+      rootEl.classList.add('hero-static', 'hero-settled', 'hero-past');
+      fit();
+      setVar('--p', '1');
+    } else {
+      let ticking = false;
+      run();
+      if (document.fonts) document.fonts.ready.then(run);
+      window.addEventListener('resize', run);
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(() => { update(); ticking = false; });
+        }
+      }, { passive: true });
+    }
+  }
+
   // 4. Choreographed Page-Load Intro Timeline
   const hero = document.querySelector('.hero');
   const root = document.documentElement;
