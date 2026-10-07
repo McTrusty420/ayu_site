@@ -1976,3 +1976,38 @@ html:not(.is-ready) .hero__cue {
 	margin-top: -3rem;
 	border-radius: 48px 48px 0 0;
 }
+
+/* Share section: keep icons icon-sized */
+.article-container a svg,
+.article-container button svg,
+.article-container a img[src*="whatsapp"],
+.article-container a img[src*="share"] {
+	width: 1.25rem;
+	height: 1.25rem;
+	flex: none;
+	display: inline-block;
+	vertical-align: middle;
+	fill: currentColor;
+}
+
+.article-container a:has(> svg),
+.article-container button:has(> svg) {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6rem;
+	min-height: 48px;
+	padding: 0.6rem 1.25rem;
+	border: 1px solid var(--line);
+	border-radius: 4px;
+	background: var(--sandal);
+	color: var(--moss);
+	font-size: 0.95rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.article-container a:has(> svg):hover,
+.article-container button:has(> svg):hover {
+	background: var(--moss);
+	color: var(--ivory);
+}
