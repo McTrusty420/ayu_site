@@ -3,6 +3,9 @@
  * Native Vanilla Interactions (< 2 KB)
  */
 document.addEventListener('DOMContentLoaded', () => {
+  // Reveal styles only apply once JS is running, so content never stays hidden
+  document.documentElement.classList.add('js-ready');
+
   // 1. Mobile Navigation Drawer
   const menuButton = document.querySelector('.menu-button');
   const mobileMenu = document.querySelector('.mobile-menu');
@@ -82,7 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     const scrollObserver = new IntersectionObserver((entries, obs) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+        // also reveal blocks already scrolled past (anchor links, reloads mid-page)
+        if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
           entry.target.classList.add('is-visible');
           obs.unobserve(entry.target);
           entry.target.addEventListener('transitionend', () => {
@@ -92,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, {
       rootMargin: '0px 0px -10% 0px',
-      threshold: 0.1
+      threshold: 0
     });
 
     fadeElements.forEach((el) => {
